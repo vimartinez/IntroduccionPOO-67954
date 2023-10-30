@@ -1,10 +1,13 @@
 package poo;
 
+import poo.constructor.CuentaCorriente;
 import poo.encapsulamiento.CuentaBancaria;
 import poo.encapsulamiento.CuentaBancariaEncapsulada;
+import poo.gettersetter.CajaDeAhorro;
 import poo.herencia.ClaseA;
 import poo.herencia.ClaseB;
 import poo.herencia.ClaseC;
+import poo.sobrecarga.Sumador;
 
 public class App {
 
@@ -13,7 +16,7 @@ public class App {
 		System.out.println("Intro POO");
 		
 		//Encapsulamiento mal implentado se puede modificar los atributos del objeto desde afuera de la clase
-/*		CuentaBancaria cuenta1 = new CuentaBancaria();
+		/*CuentaBancaria cuenta1 = new CuentaBancaria();
 		System.out.println("Cuenta no encapsulada: Activa:" +  cuenta1.activa + " Saldo:" + cuenta1.saldo);
 		cuenta1.saldo = 15478.25F;
 		System.out.println("Cuenta no encapsulada: Activa:" +  cuenta1.activa + " Saldo:" + cuenta1.saldo);*/
@@ -27,9 +30,9 @@ public class App {
 		cuentaEncapsulada.cargarSaldoALaCuenta(8000.00F);
 		System.out.println("Cuenta encapsulada Saldo:" + cuentaEncapsulada.verSaldoDeLaCuenta());*/
 		
-		System.out.println("Herencia");
+		//System.out.println("Herencia");
 		
-		ClaseA obj1 = new ClaseA();
+	/*	ClaseA obj1 = new ClaseA();
 		
 		obj1.metodo1();
 		obj1.metodo2();
@@ -42,8 +45,27 @@ public class App {
 		ClaseC obj3 = new ClaseC();
 	
 		obj3.metodo1();
-		obj3.metodo2();
+		obj3.metodo2();*/
 		
+		System.out.println("Constructores - getter y setter");
+		
+		CuentaCorriente cc1 = new CuentaCorriente();
+		CuentaCorriente cc2 = new CuentaCorriente(5);
+		CuentaCorriente cc3 = new CuentaCorriente(8,7895.8F);
+		
+		System.out.println("El saldo de cc3 es: " + cc3.obtenerSaldo());
+		
+		
+		CajaDeAhorro ca = new CajaDeAhorro(8, 158000F);
+		System.out.println("El saldo de la caja de ahorro es: "+ ca.getSaldo());
+		
+		System.out.println("Sobrecarga de métodos");
+		
+		Sumador sumador = new Sumador();
+		
+		sumador.sumar(3,25);
+		sumador.sumar(8.1, 12.6);
+		sumador.sumar(7F, 1.1F);
 	}
 
 }
